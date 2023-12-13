@@ -1,8 +1,10 @@
-const empleados = [
-    { nombre: 'Ramiro', ventasMensuales: 50000, comision: 0 },
-    { nombre: 'Benjamin', ventasMensuales: 25000, comision: 0 },
-    { nombre: 'Danilo', ventasMensuales: 100000, comision: 0 }
-]
+const empleados = []
+for (let i = 0; i < 3; i+=1) {
+    const nombre = prompt('Ingrese el nombre del empleado:');
+    const ventasMensuales = parseFloat(prompt('Ingrese las ventas mensuales de ' + nombre + ':'));
+
+    empleados.push({nombre, ventasMensuales, comision: 0});
+}
 
 function calcularComision(empleado) {
     const porcentajeComision = 0.10;
@@ -10,7 +12,7 @@ function calcularComision(empleado) {
     const comision = empleado.ventasMensuales * porcentajeComision;
 
     empleado.comision = comision;
-    console.log('La comision de ' + empleado.nombre + ' es ' + empleado.comision)
+    alert('La comision de ' + empleado.nombre + ' es ' + empleado.comision);
 }
 
 empleados.forEach(empleado => {
